@@ -2,7 +2,7 @@ import React from "react";
 import snackImage from "../assets/allsweets.jpg";
 import snackImg1 from "../assets/sweets.webp";
 import snackImg2 from "../assets/murukku.jpg";
-import snackImg3 from "../assets/paalkova.webp";
+import snackImg3 from "../assets/temp.webp";
 import snackImg4 from "../assets/chips.jpg";
 
 function SnacksSection() {
