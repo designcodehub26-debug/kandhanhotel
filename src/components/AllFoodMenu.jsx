@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import menuImg from "../assets/menu.jpeg";
+import { motion } from "framer-motion";
 
+/* ---------------- DATA ---------------- */
 const menuData = [
   {
     title: "BREAKFAST",
@@ -48,34 +50,80 @@ const menuData = [
   },
 ];
 
-function AllFoodMenu() {
-  return (
-    <div className="font-lato bg-white min-h-screen">
+/* ---------------- ANIMATIONS ---------------- */
 
-      {/* 🔥 TOP BANNER */}
+const sectionVariant = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
+
+const itemVariant = {
+  hidden: { opacity: 0, x: -20 },
+  show: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.05
+    }
+  })
+};
+
+/* ---------------- COMPONENT ---------------- */
+
+function AllFoodMenu() {
+
+  // Scroll to top
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <motion.div
+      className="font-lato bg-white min-h-screen"
+      initial={{ y: "100%", opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: "100%", opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
+
+      {/* ---------------- TOP BANNER ---------------- */}
       <div className="max-w-6xl mx-auto px-4 pt-4 relative">
 
-        {/* GREEN BACKGROUND */}
+        {/* Background */}
         <div className="hidden md:block absolute w-full h-[350px] bg-[rgb(243,255,207)] rounded-3xl"></div>
 
-        {/* IMAGE */}
-        {/* ✅ FIXED HERE: removed overflow-hidden */}
-        <div className="relative rounded-3xl shadow-lg mt-6 md:translate-y-10">
+        {/* Image */}
+        <motion.div
+          className="relative rounded-3xl shadow-lg mt-6 md:translate-y-10"
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <img
             src={menuImg}
             alt="menu"
             className="w-full h-[200px] md:h-[340px] object-cover rounded-3xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent rounded-3xl"></div>
-        </div>
+        </motion.div>
 
       </div>
 
-      {/* 🔥 MENU CONTENT */}
+      {/* ---------------- MENU CONTENT ---------------- */}
       <div className="px-6 md:px-20 py-10 md:py-16 space-y-10 md:space-y-12 mt-6 md:mt-16">
 
         {menuData.map((section, index) => (
-          <div key={index}>
+          <motion.div
+            key={index}
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
 
             {/* TITLE */}
             <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-5 tracking-wide border-l-4 border-green-500 pl-3">
@@ -86,23 +134,28 @@ function AllFoodMenu() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2 text-base md:text-lg">
 
               {section.items.map((item, i) => (
-                <p
+                <motion.p
                   key={i}
-                  className="flex justify-between border-b border-gray-200 py-2 pr-4"
+                  custom={i}
+                  variants={itemVariant}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="flex justify-between border-b border-gray-200 py-2 pr-4 transition-all duration-300 hover:bg-[rgb(243,255,207)] hover:pl-2 hover:rounded-md hover:shadow-sm cursor-pointer"
                 >
                   {item}
                   <span className="text-gray-400">•</span>
-                </p>
+                </motion.p>
               ))}
 
             </div>
 
-          </div>
+          </motion.div>
         ))}
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }
 

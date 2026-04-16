@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import './App.css'
 
 import Navbar from "./components/Navbar";
@@ -13,13 +14,12 @@ import FooterSection from "./components/FooterSection";
 import News from "./components/News";
 import AllFoodMenu from "./components/AllFoodMenu";
 
-function App() {
+function AnimatedRoutes() {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-
-      <Navbar />
-
-      <Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
 
         <Route
           path="/"
@@ -40,6 +40,17 @@ function App() {
         <Route path="/menu" element={<AllFoodMenu />} />
 
       </Routes>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <Navbar />
+
+      <AnimatedRoutes />
 
       <FooterSection />
 

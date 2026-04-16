@@ -6,14 +6,14 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full bg-white border-b relative z-50">
+    <div className="w-full bg-white border-b-2 border-[rgb(243,255,207)] relative z-50">
 
       {/* NAV BAR */}
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-10 py-3">
 
         {/* LOGO */}
         <div className="flex items-center">
-          <img src={logo} className="h-[55px]" />
+          <img src={logo} className="h-[70px]" alt="logo" />
           <span className="text-lg font-medium ml-1">-groups</span>
         </div>
 
@@ -27,72 +27,71 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="bg-black text-white px-7 py-3 rounded-full text-[16px] font-semibold tracking-wide hover:opacity-90 transition">
+            <button className="bg-black text-white px-7 py-3 rounded-full text-[16px] font-semibold hover:opacity-90 transition">
               Book table
             </button>
           </a>
         </div>
 
-        {/* MOBILE BUTTON */}
+        {/* MOBILE MENU BUTTON */}
         <button
           onClick={() => setOpen(true)}
           className="md:hidden text-2xl"
         >
           ☰
         </button>
+
       </div>
 
-      {/* 🔥 OVERLAY */}
+      {/* MOBILE MENU */}
       {open && (
-        <div
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/40 z-40"
-        ></div>
+        <>
+          {/* OVERLAY */}
+          <div
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          ></div>
+
+          {/* CENTER MENU */}
+          <div className="fixed inset-0 flex items-center justify-center z-50">
+
+            <div className="bg-white w-[85%] max-w-[300px] rounded-2xl shadow-2xl p-6 relative">
+
+              {/* CLOSE */}
+              <button
+                onClick={() => setOpen(false)}
+                className="absolute top-4 right-4 text-2xl"
+              >
+                ✕
+              </button>
+
+              {/* MENU */}
+              <div className="flex flex-col gap-6 mt-6 text-lg font-semibold text-center">
+
+                <NavLink to="/" onClick={() => setOpen(false)}>
+                  Menu
+                </NavLink>
+
+                <NavLink to="/news" onClick={() => setOpen(false)}>
+                  News
+                </NavLink>
+
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=rpskandhanvegtreat@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-black text-white px-6 py-3 rounded-full w-full">
+                    Book table
+                  </button>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </>
       )}
-
-      {/* 🔥 SIDEBAR MENU */}
-     {/* SIDEBAR MENU */}
-<div
-  className={`
-    fixed top-0 right-0 h-full w-[75%] max-w-[300px]
-    bg-white shadow-xl z-50
-    transform transition-transform duration-300
-    ${open ? "translate-x-0" : "translate-x-full"}
-  `}
->
-
-  {/* CLOSE */}
-  <div className="flex justify-end p-3">
-    <button onClick={() => setOpen(false)} className="text-2xl">
-      ✕
-    </button>
-  </div>
-
-  {/* MENU */}
-  <div className="flex flex-col gap-4 px-5 pt-6 text-base font-semibold">
-
-    <NavLink to="/" onClick={() => setOpen(false)}>
-      Menu
-    </NavLink>
-
-    <NavLink to="/news" onClick={() => setOpen(false)}>
-      News
-    </NavLink>
-
-     <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=rpskandhanvegtreat@gmail.com&su=Table Booking&body=Hi, I would like to book a table."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-black text-white px-7 py-3 rounded-full text-[16px] font-semibold tracking-wide hover:opacity-90 transition">
-              Book table
-            </button>
-          </a>
-
-  </div>
-
-</div>
-
     </div>
   );
 }

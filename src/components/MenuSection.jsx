@@ -19,18 +19,18 @@ function MenuSection() {
           {/* GREEN BACKGROUND */}
           <div className="absolute -top-3 -left-3 w-full h-[85%] bg-[rgb(243,255,207)] rounded-[20px] md:rounded-[30px] z-0"></div>
 
-          <Link to="/menu">
-            <div className="relative z-10 rounded-[20px] md:rounded-[30px] overflow-hidden shadow-lg cursor-pointer">
-              <img
-                src={menuImg}
-                alt="menu"
-                className="w-[220px] md:w-[340px] h-[300px] md:h-[360px] object-cover hover:scale-105 transition duration-300"
-              />
-            </div>
-          </Link>
+         <Link to="/menu">
+  <div className="relative z-10 w-full md:w-auto rounded-[20px] md:rounded-[30px] overflow-hidden shadow-lg cursor-pointer">
+    <img
+      src={menuImg}
+      alt="menu"
+      className="w-full md:w-[340px] h-[320px] md:h-[360px] object-cover hover:scale-105 transition duration-300"
+    />
+  </div>
+</Link>
 
           {/* TEXT BELOW */}
-          <p className="mt-4 md:mt-6 text-base md:text-lg font-medium text-gray-800">
+          <p className="mt-4 md:mt-6  md:text-lg font-medium text-gray-800">
             All-food-menu
           </p>
 
