@@ -25,7 +25,7 @@ function SnacksSection() {
   return (
     <div className="font-lato w-full flex justify-center px-4 md:px-16 py-6 md:py-20 mt-0 md:mt-20 mb-8 md:mb-20">
 
-//   <div className="max-w-7xl w-full relative flex flex-col md:flex-row items-center md:pb-20">
+  <div className="max-w-7xl w-full relative flex flex-col md:flex-row items-center md:pb-20">
 
 
         {/* LEFT IMAGE - PARALLAX FEEL */}
