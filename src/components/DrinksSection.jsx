@@ -23,9 +23,7 @@ function DrinksSection() {
   return (
     <div className="font-lato w-full flex justify-center px-4 md:px-16 py-6 md:py-20 mt-0 md:mt-20 mb-8 md:mb-20">
 
-<div className="max-w-7xl w-full relative flex flex-col md:flex-row items-center md:pb-20">
-
-
+ <div className="max-w-7xl w-full relative flex flex-col md:flex-row items-center md:pb-40">
         {/* LEFT CARD - FLOATING EFFECT */}
         <motion.div
           className="order-2 md:order-1 bg-[rgb(243,255,207)] rounded-[30px] md:rounded-[40px] pt-8 md:pt-12 pb-4 px-6 md:px-12 w-full md:w-[65%] mt-6 md:mt-0 md:absolute md:left-[-30px] md:top-16 shadow-md z-10"
@@ -102,11 +100,11 @@ function DrinksSection() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <img
-            src={drinkImage}
-            alt="drinks"
-            className="w-full max-w-[350px] md:max-w-[450px] h-[260px] md:h-[480px] object-cover"
-          />
+         <img
+  src={drinkImage}
+  alt="drinks"
+  className="w-full max-w-[350px] md:max-w-[450px] h-[260px] md:h-[480px] object-cover rounded-[30px]"
+/>
         </motion.div>
 
       </div>

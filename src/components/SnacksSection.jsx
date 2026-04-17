@@ -23,11 +23,9 @@ function SnacksSection() {
   };
 
   return (
-    <div className="font-lato w-full flex justify-center px-4 md:px-16 py-6 md:py-20 mt-0 md:mt-20 mb-8 md:mb-20">
+   <div className="font-lato w-full flex justify-center px-4 md:px-16 py-6 md:py-20 mt-0 mb-12 md:mb-24">
 
-  <div className="max-w-7xl w-full relative flex flex-col md:flex-row items-center md:pb-20">
-
-
+ <div className="max-w-7xl w-full relative flex flex-col md:flex-row items-center md:pb-32">
         {/* LEFT IMAGE - PARALLAX FEEL */}
         <motion.div
           className="w-full md:w-[44%] flex justify-center md:justify-start"
@@ -95,10 +93,10 @@ function SnacksSection() {
               <motion.div
                 key={i}
                 variants={popItem}
-                className="flex gap-4 md:gap-6 mb-6 md:mb-8 items-start group bg-white/40 rounded-xl p-3"
+                className="flex gap-4 md:gap-6 mb-6 md:mb-8 items-start group  rounded-xl p-3"
                 whileHover={{
                   y: -8,
-                  boxShadow: "0px 10px 25px rgba(0,0,0,0.12)"
+                  
                 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >

@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo1.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-
+useEffect(() => {
+  if (open) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [open]);
   return (
     <div className="w-full bg-white border-b-2 border-[rgb(243,255,207)] relative z-50">
 
@@ -53,10 +59,9 @@ function Navbar() {
           ></div>
 
           {/* CENTER MENU */}
-          <div className="fixed inset-0 flex items-center justify-center z-50">
+         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
 
-            <div className="bg-white w-[85%] max-w-[300px] rounded-2xl shadow-2xl p-6 relative">
-
+           <div className="bg-white w-[85%] max-w-[300px] rounded-2xl shadow-2xl p-6 relative mx-auto">
               {/* CLOSE */}
               <button
                 onClick={() => setOpen(false)}
@@ -68,7 +73,7 @@ function Navbar() {
               {/* MENU */}
               <div className="flex flex-col gap-6 mt-6 text-lg font-semibold text-center">
 
-                <NavLink to="/" onClick={() => setOpen(false)}>
+                <NavLink to="/menu" onClick={() => setOpen(false)}>
                   Menu
                 </NavLink>
 

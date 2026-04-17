@@ -1,6 +1,6 @@
 import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
-import logo2 from "../assets/logo2.png";
+import logo2 from "../assets/logo2.jpg";
 
 export default function FooterSection() {
 

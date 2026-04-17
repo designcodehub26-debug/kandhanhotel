@@ -54,7 +54,13 @@ function LunchSection() {
                 key={i}
                 variants={waveItem}
                 className="flex gap-4 md:gap-6 mb-6 md:mb-8 items-start group"
+                 whileHover={{
+                  y: -8,
+                  
+                }}
+                transition={{ type: "spring", stiffness: 200 }}
               >
+
 
                 {/* IMAGE */}
                 <motion.div

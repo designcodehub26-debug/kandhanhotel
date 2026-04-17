@@ -2,7 +2,7 @@ import React from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion"; // ✅ add this
 import homeImage from "../assets/home1.jpg";
-import logo2 from "../assets/logo2.png";
+import logo2 from "../assets/logo2.jpg";
 
 function Home() {
   return (
@@ -11,7 +11,7 @@ function Home() {
 
         {/* LOGO */}
         <motion.div
-          className="flex justify-center py-4 md:py-6"
+       className="flex justify-center pt-6 pb-2 md:pt-10 md:pb-4"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -19,14 +19,12 @@ function Home() {
           <img
             src={logo2}
             alt="logo"
-            className="w-[110px] sm:w-[140px] md:w-[260px] h-auto object-contain"
+ className="w-[150px] sm:w-[180px] md:w-[260px] h-auto object-contain"
           />
         </motion.div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center mt-16">
-
-          {/* LEFT */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center mt-6 md:mt-12">
           <motion.div
             className="text-center md:text-left"
             initial={{ opacity: 0, x: -60 }}

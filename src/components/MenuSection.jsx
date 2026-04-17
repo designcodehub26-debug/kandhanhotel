@@ -1,10 +1,10 @@
 import React from "react";
 import menuImg from "../assets/menu.jpeg";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 function MenuSection() {
   return (
-    <div className="w-full py-12 md:py-20 mt-12 md:mt-20 px-4 md:px-16 flex flex-col items-start">
+    <div className="w-full py-8 md:py-12 mt-8 md:mt-12 px-4 md:px-16 flex flex-col items-start">
 
       {/* TITLE */}
       <h2 className="text-3xl md:text-5xl font-semibold mb-10 md:mb-16">
@@ -29,11 +29,15 @@ function MenuSection() {
   </div>
 </Link>
 
-          {/* TEXT BELOW */}
-          <p className="mt-4 md:mt-6  md:text-lg font-medium text-gray-800">
-            All-food-menu
-          </p>
-
+          <Link to="/menu">
+<motion.button
+  className="bg-black text-white px-6 py-3 md:px-8 md:py-3 rounded-full text-sm md:text-base font-medium shadow-md mt-4"
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
+>
+  All Food Menu
+</motion.button>
+</Link> 
         </div>
 
       </div>

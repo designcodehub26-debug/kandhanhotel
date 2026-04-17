@@ -1,8 +1,8 @@
-// 
+
 import React from "react";
 import { motion } from "framer-motion";
-import logo2 from "../assets/logo2.png";
-
+import logo2 from "../assets/logo2.jpg";
+import { Link } from "react-router-dom";
 function VisitSection() {
   return (
     <div className="font-lato w-full flex justify-center px-4 md:px-16 py-12 md:py-20">
@@ -99,27 +99,36 @@ function VisitSection() {
               Join us and taste the difference passion and quality make.
             </motion.p>
 
-            {/* BUTTONS - MAGNETIC FEEL */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start">
+          {/* BUTTONS */}
+<div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
 
-              <motion.button
-                className="bg-black text-white px-6 py-3 rounded-full"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact us
-              </motion.button>
+  {/* CONTACT */}
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=rpskandhanvegtreat@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <motion.button
+      className="bg-black text-white px-6 py-3 rounded-full text-sm md:text-base font-medium shadow-md w-[180px]"
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Contact Us
+    </motion.button>
+  </a>
 
-              <motion.button
-                className="border-2 border-black px-6 py-3 rounded-full"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore menu
-              </motion.button>
+  {/* MENU */}
+  <Link to="/menu">
+    <motion.button
+      className="border-2 border-black px-6 py-3 rounded-full text-sm md:text-base font-medium w-[180px] hover:bg-black hover:text-white transition"
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Explore Menu
+    </motion.button>
+  </Link>
 
-            </div>
-
+</div>
           </motion.div>
 
         </div>
