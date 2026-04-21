@@ -2,7 +2,7 @@ import React from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion"; // ✅ add this
 import homeImage from "../assets/home1.jpg";
-import logo2 from "../assets/logo2.jpg";
+import logo2 from "../assets/logo2.png";
 
 function Home() {
   return (

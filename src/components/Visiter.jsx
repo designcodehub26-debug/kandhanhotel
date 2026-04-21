@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import logo2 from "../assets/logo2.jpg";
+import logo2 from "../assets/logo2.png";
 import { Link } from "react-router-dom";
 function VisitSection() {
   return (
